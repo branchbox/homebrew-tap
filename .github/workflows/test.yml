@@ -1,0 +1,64 @@
+name: Test Formula
+
+on:
+  pull_request:
+    paths:
+      - 'Formula/**'
+  push:
+    branches:
+      - main
+    paths:
+      - 'Formula/**'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: Audit Formula
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        id: setup-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Audit formula
+        run: |
+          brew audit --strict --online --skip-style Formula/branchbox.rb || true
+          brew audit --strict Formula/branchbox.rb
+
+  test-install:
+    name: Test Installation
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-13, macos-14]  # Intel and Apple Silicon
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap repository
+        run: |
+          brew tap branchbox/tap ${{ github.workspace }}
+
+      - name: Install formula
+        run: |
+          brew install --verbose branchbox
+
+      - name: Test installation
+        run: |
+          which branchbox
+          file $(which branchbox)
+          branchbox --version
+
+      - name: Cleanup
+        if: always()
+        run: |
+          brew uninstall branchbox || true
+          brew untap branchbox/tap || true
