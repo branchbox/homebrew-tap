@@ -87,6 +87,11 @@ Please report issues to the appropriate repository:
 
 This tap is automatically updated when new versions of BranchBox are released. The formula is maintained by the BranchBox team and updated via GitHub Actions.
 
+### For Maintainers
+
+- **Initial Setup**: See [docs/INITIAL_SETUP.md](docs/INITIAL_SETUP.md) for adding checksums to the first release
+- **Automation**: See [docs/HOMEBREW_AUTOMATION.md](docs/HOMEBREW_AUTOMATION.md) for integrating formula updates into your release workflow
+
 ### For Contributors
 
 If you're contributing to the formula:
