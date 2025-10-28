@@ -15,7 +15,7 @@ jobs:
   audit:
     name: Audit Formula
     runs-on: macos-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,10 +24,14 @@ jobs:
         id: setup-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Create temporary tap
+        run: |
+          mkdir -p $(brew --repository)/Library/Taps/branchbox
+          ln -s ${{ github.workspace }} $(brew --repository)/Library/Taps/branchbox/homebrew-tap
+
       - name: Audit formula
         run: |
-          brew audit --strict --online --skip-style Formula/branchbox.rb || true
-          brew audit --strict Formula/branchbox.rb
+          brew audit --strict --online branchbox/tap/branchbox
 
   test-install:
     name: Test Installation
@@ -35,7 +39,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-13, macos-14]  # Intel and Apple Silicon
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,13 +47,14 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Tap repository
+      - name: Create temporary tap
         run: |
-          brew tap branchbox/tap ${{ github.workspace }}
+          mkdir -p $(brew --repository)/Library/Taps/branchbox
+          ln -s ${{ github.workspace }} $(brew --repository)/Library/Taps/branchbox/homebrew-tap
 
       - name: Install formula
         run: |
-          brew install --verbose branchbox
+          brew install --verbose branchbox/tap/branchbox
 
       - name: Test installation
         run: |
@@ -61,4 +66,4 @@ jobs:
         if: always()
         run: |
           brew uninstall branchbox || true
-          brew untap branchbox/tap || true
+          rm $(brew --repository)/Library/Taps/branchbox/homebrew-tap || true
