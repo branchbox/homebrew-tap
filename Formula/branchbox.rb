@@ -1,16 +1,16 @@
 class Branchbox < Formula
   desc "Parallel feature sandboxes for AI-assisted development"
   homepage "https://github.com/branchbox/branchbox"
-  version "v0.1.1"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/branchbox/branchbox/releases/download/vv0.1.1/branchbox-v0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "0874b711cb4a85cfaa71e93deb6baab5dd049bc6588f66c7e87320ad77f04b33"
+      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "f5bed4a2afb1f7af3ac0e3693d9b261db9a0478dba2d574babf9e6326341b54a"
     elsif Hardware::CPU.arm?
-      url "https://github.com/branchbox/branchbox/releases/download/vv0.1.1/branchbox-v0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "2ad620b1a30ee5108c68909cd6ad225ba21bf46e74d48e86c7ad2c6e7a6cc04a"
+      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "cc96f345603109ca02172a047ad849d8ba849debecb59b3bb0c954582ceb0366"
     end
   end
 
