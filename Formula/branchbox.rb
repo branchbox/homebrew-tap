@@ -14,6 +14,16 @@ class Branchbox < Formula
     end
   end
 
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "ae2fc9411de4614de2f6132aa417a8865c2a4397e754c5cc5acf8110b2b66a74"
+    elsif Hardware::CPU.arm?
+      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "06ef8a0f71ece938f1e9a4e313304f79b521288c5cdc4dde1a67102b10887d16"
+    end
+  end
+
   def install
     bin.install "branchbox"
 

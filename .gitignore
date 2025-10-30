@@ -48,3 +48,12 @@ vendor/
 
 # Logs
 *.log
+
+# Environment
+.env
+
+# BranchBox
+.branchbox/
+
+# Claude Code
+.claude/
