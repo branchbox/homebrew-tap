@@ -1,7 +1,6 @@
 class Branchbox < Formula
   desc "Parallel feature sandboxes for AI-assisted development"
   homepage "https://github.com/branchbox/branchbox"
-  version "0.1.1"
   license "MIT"
 
   on_macos do
