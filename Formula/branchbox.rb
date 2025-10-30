@@ -7,10 +7,10 @@ class Branchbox < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "f5bed4a2afb1f7af3ac0e3693d9b261db9a0478dba2d574babf9e6326341b54a"
+      sha256 "95d72cd6cab5f821c0a4aeaec22ed3b4357389438600d379f31015d4f0efb7a3"
     elsif Hardware::CPU.arm?
       url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "cc96f345603109ca02172a047ad849d8ba849debecb59b3bb0c954582ceb0366"
+      sha256 "419ae577f314e14c8730b8450913ecfceaa781a9109731aceca6866a59a6d0ee"
     end
   end
 
