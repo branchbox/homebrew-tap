@@ -66,4 +66,3 @@ jobs:
         if: always()
         run: |
           brew uninstall branchbox || true
-          rm $(brew --repository)/Library/Taps/branchbox/homebrew-tap || true
