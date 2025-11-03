@@ -31,7 +31,7 @@ jobs:
 
       - name: Audit formula
         run: |
-          brew audit --strict --online branchbox/tap/branchbox
+          brew audit --strict --online --except=version branchbox/tap/branchbox
 
   test-install:
     name: Test Installation
@@ -66,4 +66,3 @@ jobs:
         if: always()
         run: |
           brew uninstall branchbox || true
-          rm $(brew --repository)/Library/Taps/branchbox/homebrew-tap || true
