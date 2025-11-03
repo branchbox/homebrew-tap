@@ -5,21 +5,21 @@ class Branchbox < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-x86_64-apple-darwin.tar.gz"
-      sha256 "e1b386139ada2bd1d6d62da089f776cf3a991fea2843e51a75d78540f38389db"
+      url "https://github.com/branchbox/branchbox/releases/download/v0.2.0/branchbox-0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "fe30c8045e5318f1f4b66e053c69491867f26f2249c54ef246623070d15fa78e"
     elsif Hardware::CPU.arm?
-      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "83b8aa502737a2acec30ec8b43f51b91c6e616e393c3c76f1082a24efe86eb2a"
+      url "https://github.com/branchbox/branchbox/releases/download/v0.2.0/branchbox-0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "ffcf0d75266d5497677631aa7587467aa74fd053ad9f1c0cbf679ed00e333c9c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ae2fc9411de4614de2f6132aa417a8865c2a4397e754c5cc5acf8110b2b66a74"
+      url "https://github.com/branchbox/branchbox/releases/download/v0.2.0/branchbox-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "e308a5d1caf252f6fe3bbc667801261dea953194ea6edae86575962d70580f95"
     elsif Hardware::CPU.arm?
-      url "https://github.com/branchbox/branchbox/releases/download/v0.1.1/branchbox-0.1.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "06ef8a0f71ece938f1e9a4e313304f79b521288c5cdc4dde1a67102b10887d16"
+      url "https://github.com/branchbox/branchbox/releases/download/v0.2.0/branchbox-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f66716c8f74c3ea605a519335383bb68104f8c6ad8938881cdfd091e210f0ec5"
     end
   end
 
