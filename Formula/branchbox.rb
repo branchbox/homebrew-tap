@@ -1,28 +1,28 @@
 class Branchbox < Formula
   desc "Parallel feature sandboxes for AI-assisted development"
   homepage "https://github.com/branchbox/branchbox"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/branchbox/branchbox/releases/download/v#{version}/branchbox-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "ac48a16cbe18a4133b91d8a32587d1514a8c2e43e1d63c529764e8ead46ab3d4"
+      sha256 "82b6faf78a14c838b87c2624e4ad7371519fe5569915583cffd6c58c2899a981"
     end
     on_arm do
       url "https://github.com/branchbox/branchbox/releases/download/v#{version}/branchbox-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "974ec7f876cae8c3e381c33b43f92298e8e7f2a07bf756c44ddc21f30ddc2a03"
+      sha256 "24dcae1fc64ad6d2c72170814a15e61c11ef27575a40a43f6a9b228291660cbb"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/branchbox/branchbox/releases/download/v#{version}/branchbox-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "0881d2697d1d675297d11ae856812cdecc3a8c3b3797a4f4c30ebb10bd3d4b1a"
+      sha256 "9d1ecb8d3f0cd59eacfb56a8c465a0e81dc1e1c20e1c4950625c4a97f899ed07"
     end
     on_arm do
       url "https://github.com/branchbox/branchbox/releases/download/v#{version}/branchbox-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a338f5fdb9769e50edaef3a6b69fced48402630ce8f7036d0a07a57d7dc7591d"
+      sha256 "922b1e7dcefe307d2ccc7e5d22d964b356bc9b6f8e5d4c2db93226cd6e92c700"
     end
   end
 
